@@ -1,0 +1,7 @@
+.chart-wrapper, .chart-wrapper .k-chart {
+    height: 400px;
+}
+
+.k-content #example {
+	display: none;
+}

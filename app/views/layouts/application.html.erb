@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FoodieTruckie</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class='mainFrame'>
+		
+		<div class='topName'>
+			<span id="menu-icon">&#x2630;</span>
+			<span id="title"></span>
+		</div>
+		
+		<div class='topName_filler'></div>
 
-<%= yield %>
+		<%= yield %>
+
+	</div>
 
 </body>
 </html>

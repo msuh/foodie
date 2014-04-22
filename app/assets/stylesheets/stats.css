@@ -1,0 +1,48 @@
+.instruction {
+	font-size:22px;
+	color: #00A19B;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.button {
+	text-align: center;
+}
+
+button {
+	width: 200px;
+	font-size: 30px;
+	border-radius: 7px;
+	color: #E04E5F;
+	background-color: white;
+}
+
+.hidden {
+	display: none !important;
+}
+
+table {
+	font-size: 16px;
+	text-align: right;
+	border-spacing: 2px;	
+	border-top-style: solid;
+	border-bottom-style: solid;
+}
+
+.calendar_icon {
+	width: 30px;
+	height: 30px;
+	margin: auto;
+	cursor: pointer;
+}
+
+.calendar_instruction {
+	font-size: 15px;
+	vertical-align: 50%;
+	color: #E04E5F;
+	cursor: pointer;
+}
+
+.calendar_bottom {
+	text-align: center;	
+}

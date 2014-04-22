@@ -1,0 +1,165 @@
+#title, #menu-icon {
+	/*color: #E04E5F;*/
+	color: #f7f6f5;
+}
+
+.topName {
+/*	background-color: #E5E3DF;
+*/	background-color: #E04E5F;
+}
+
+.mainFrame {
+*/	background-color: #E5E3DF;
+}
+
+.status {
+	display: block;
+	text-align: center;
+	color: #00A19B;
+	font-size: 10pt;
+}
+
+#table {
+	position: relative;
+	width: 100%;
+	background-color: #E5E3DF;
+}
+
+.rowPerOrder {
+	height: 95px;
+	background-color: #f7f6f5;
+}
+
+.cross {
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+}
+.check1, .check2, .check3 {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.check1, .check2 {
+	cursor: pointer;
+}
+
+.col2 {
+	padding: 5px;
+	position: relative
+}
+.col3 {
+	width: 26%;
+}
+
+/*.col2 {
+	width: 70%;
+}*/
+
+.checkButton {
+	width: 50px;
+	height: 50px;
+}
+
+.preparing > .menu {
+	color: #00A19B;
+	font-size: 25pt;
+}
+.preparing > .noteLabel {
+	color: #E04E5F;
+	font-size: 15pt;
+}
+.preparing > .note {
+	color: #7CC7C6;
+	font-size: 13pt;
+}
+.preparing > .desiredTLabel {
+	color: #E04E5F;
+	font-size: 15pt;
+}
+.preparing > .desiredT {
+	color: #E04E5F;
+	font-size: 15pt;
+}
+
+.prepared > .name {
+	font-size: 25pt;
+	color: #00A19B;
+}
+.prepared > .paid {
+	font-size: 10pt;
+	font-weight: bold;
+	color: #584E95;
+	float: right;
+	margin-top: 5pt;
+}
+.prepared > .menuLabel {
+	font-size: 13pt;
+	color: #7CC7C6;
+
+}
+.prepared > .menu {
+	font-size: 13pt;
+	color: #7CC7C6;
+}
+.prepared > .desiredTLabel {
+	font-size: 15pt;
+	color: #E04E5F;
+}
+.prepared > .desiredT {
+	font-size: 15pt;
+	color: #E04E5F;
+}
+
+.cancelBox {
+    background-color: black;
+    position: absolute;
+    width: 250px;
+    opacity: .75;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 10px;
+    margin-top: -19px;	
+}
+
+.cancel, .soldout {
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+#undoBox {
+    background-color: black;
+    position: fixed;
+    width: 260px;
+    opacity: .75;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    top: 13%;
+    left: 3%;
+/*    margin-top: -38px;	
+    margin-left: -140px;
+*/    z-index: 1001;
+}
+
+#message {
+	font-size: 9pt;
+}
+
+#undoButton {
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.moreButton, .lessButton {
+	cursor: pointer;
+	background-color: #7CC7C6;
+	border-radius: 8px;
+	color: white;
+}

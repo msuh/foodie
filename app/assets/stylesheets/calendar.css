@@ -1,0 +1,79 @@
+#special-days {
+    /*background: url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/17/19780/5a41dd58906f8e70b91af0ce92525d1d.jpg') transparent no-repeat 0 bottom;   */
+    background-color: #E5E3DF;
+}
+#calendar {
+    /*margin: 20px 0 0 265px;*/
+    /*width: 340px;*/
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+#calendar .k-content {
+    height: 300px;
+}
+
+#calendar .k-header {
+    font-size: 25px;
+}
+
+#calendar,
+#calendar .k-content,
+#calendar .k-header,
+#calendar th,
+#calendar .k-link,
+#calendar .k-state-hover,
+#calendar .k-state-selected,
+#calendar .k-state-focused {
+    background: transparent;
+    border-color: transparent;    
+    box-shadow: none;
+}
+#calendar .k-content .k-state-hover,
+#calendar .k-content .k-state-focused {
+    font-size: 20px;
+    font-weight: bold;
+}
+#calendar .k-state-selected, #calendar .k-state-selected.k-state-focused {
+    font-size: 24px;
+    font-weight: bold;
+}
+#calendar .k-content .k-link {
+    padding: 0;
+    min-height: 40px;
+    line-height: 40px;
+}
+#calendar th {
+    /*padding-top: 20px;*/
+    color: #E04E5F;
+}
+#calendar td.k-other-month .k-link {
+    color: #00A19B;
+}
+#calendar th,
+#calendar td {
+    text-align: center;
+}
+
+.exhibition, .party, .cocktail {
+/*        width: 40px;
+        height: 40px;
+        margin: auto;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 50%;
+        line-height: 40px;*/
+}
+.exhibition {
+    background-color: #fff;
+    color: #000;
+}
+/*.party {
+    background-color: #70c114;
+}*/
+/*.cocktail {
+    background-color: #00a1e8;
+}*/
