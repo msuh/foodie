@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'reviews/index'
+  get 'menus/index' => 'menus#index'
 
   resources :reviews
   resources :customers
   resources :menus
+
 
   root "reviews#index"
 

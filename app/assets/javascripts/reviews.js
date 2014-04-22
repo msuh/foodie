@@ -78,7 +78,7 @@ $(document).ready(function(){
 //each row has id = "id+[count#]"
 function AddReply(id){
 	var replyInput = '<input class="replyTextbox" type="text" />',
-		img = '<img class="vendorImg" src="Icons_12.gif" />',
+		img = '<img class="vendorImg" src="/assets/Icons_12.gif" />',
 		post = '<input class="postButton" type="button" name="edit" value="POST"/>',
 		del = '<input class="delButton" type="button" value="DELETE"';
 	return '<li id="'+id+'" class="reply">'+img+replyInput+post+del+'</li>';
