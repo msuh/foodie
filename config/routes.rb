@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
+  get 'reviews/index' => 'reviews#index'
   get 'menus/index' => 'menus#index'
 
   resources :reviews

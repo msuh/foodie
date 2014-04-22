@@ -76,7 +76,7 @@ body{
 }
 .submenuRow{
 	background-color: #E5E3DF;
-	height:170px;
+	height:180px;
 	width:310px;
 	margin-top:1px;
 	margin-bottom:2px;
@@ -106,8 +106,8 @@ body{
 }
 
 .submenuName{
-	height:20px;
-	width:250px;
+	height:30px;
+	width:280px;
 	float:left;
 	/*padding:5px;*/
 	font-size: 30px;
@@ -171,24 +171,28 @@ body{
 	color: white;
 	background-color: #A6A4A1;
 	font-size: 20px;
+	position: absolute;
 }
 .subtextBox{
-	height: 25px;
+	height: 30px;
 	width: 200px;
-	margin:5px;
+	margin:0px;
+	margin-left:5px;
 	border: 0px;
 	color: white;
-	background-color: #A6A4A1;
-	font-size: 20px;
+	/*background-color: #A6A4A1;*/
+	background-color: inherit;
+	font-size: 30px;
 	display: block;
 }
 .priceTextBox{
-	height: 15px;
+	height: 20px;
 	width: 70px;
 	margin-left: 8px;
 	border: 0px;
 	color: white;
-	background-color: #A6A4A1;
+	/*background-color: #A6A4A1;*/
+	background-color: inherit;
 	font-size: 15px;
 	opacity: .8;
 	display:block;
@@ -212,11 +216,12 @@ body{
 	/*margin-left:-260px;*/
 	border-radius: 5px;
 	position:absolute;
-	z-index: -1;
+	z-index: -10;
 }
 .price{
 	font-size: 20px;
-	margin:10px;
+	margin:0px;
+	margin-left:10px;
 	display: inline-block;
 	color: white;
 	/*float:right;*/

@@ -1,8 +1,8 @@
-var count = 6; //count starts at 6 since there are default menus already in
-
 
 //Jquery uses
 $(document).ready(function(){
+	var count = 6; //count starts at 6 since there are default menus already in
+
 	var title = document.title;
 	$('#title').text(title);
 
@@ -68,21 +68,18 @@ $(document).ready(function(){
 	*/
 	$(document).on('keydown','.textBox', function(evt){
 		if(event.which == 13){
-			console.log('enter pressed');
 			var val = $(this).val();
 			$(this).replaceWith('<p class="menuName">'+val+'</p>');
 		}
 	});
 	$(document).on('keydown','.subtextBox', function(evt){
 		if(event.which == 13){
-			console.log('enter pressed');
 			var val = $(this).val();
 			$(this).replaceWith('<p class="submenuName">'+val+'</p>');
 		}
 	});
 	$(document).on('keydown','.priceTextBox', function(evt){
 		if(event.which == 13){
-			console.log('enter pressed');
 			var val = $(this).val();
 			$(this).replaceWith('<p class="price">'+val+'</p>');
 		}
@@ -105,14 +102,17 @@ function AddNewMenuBar(id){
 		edit = '<input class="editMenu" type="button" name="edit" value="EDIT"/>';
 	return '<li id="id'+id+'" class="ol_menuRow"><ol class="submenu" id=listid'+id+'><li class="menuRow">'+name+addBut+edit+'</li><ol class="ol_submenuRow"></ol></ol></li>';
 }
-
+// <div class='gradient'>
+// 	<p class="submenuName">Chicken Fried Rice</p>
+// 	<p class="price">$5.00</p>
+// </div>
 //function for adding the submenus
 function AddSubMenuBar(id){
 	var name = '<p class="submenuName">menu name</p>',
 		edit = '<input class="editsubMenu" type="button" name="edit" value="EDIT"/>',
-		img = '<img class="menuImage" src=""/>',
+		img = '<img class="menuImage" src="/assets/question.jpeg"/>',
 		price = '<p class="price">$</p>';
-	return '<li id="id'+id+'" class="submenuRow">'+name+edit+img+price+'</li>';
+	return '<li id="id'+id+'" class="submenuRow">'+edit+img+'<div class="gradient">'+name+price+'</div></li>';
 }
 
 function createTextBox(value){
