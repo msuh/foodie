@@ -1,8 +1,8 @@
+var count = 6; //count starts at 6 since there are default menus already in
+
 
 //Jquery uses
 $(document).ready(function(){
-	var count = 6; //count starts at 6 since there are default menus already in
-
 	var title = document.title;
 	$('#title').text(title);
 
@@ -42,8 +42,24 @@ $(document).ready(function(){
 			value= $('#'+id+' .menuRow p').text();
 		$('#'+id+' .menuRow p').replaceWith(createTextBox(value));
 		$('#'+id+' .menuRow .textBox').focus();
+		$(this).removeClass('editMenu');
+		$(this).addClass('save');
+		$(this).val('SAVE');
 		
 	});
+
+	$(document).on('click','.save', function(evt){
+		var parent = evt['currentTarget']['parentElement']['parentElement'];
+		var id = $(parent).attr('id');
+
+		var e = $.Event("keydown");
+			e.keyCode = $.ui.keyCode.ENTER;
+		$('#'+id+' .menuRow .textBox').trigger(e);
+		$(this).removeClass('save');
+		$(this).addClass('editMenu');
+		$(this).val('EDIT');
+	});
+
 	$(document).on('click','.editsubMenu', function(evt){
 		var parent = evt['currentTarget']['parentElement'];
 		var id = $(parent).attr('id'),
@@ -52,7 +68,30 @@ $(document).ready(function(){
 		$('#'+id+' .textBox').focus();
 		value = $('#'+id+' .price').text();
 		$('#'+id+' .price').replaceWith(createPriceTextBox(value));
-		
+
+		$(this).removeClass('editsubMenu');
+		$(this).addClass('saveSub');
+		$(this).val('SAVE');
+	});
+
+	/*
+		for saving edited submenuname and price
+	*/
+	$(document).on('click','.saveSub', function(evt){
+		var parent = evt['currentTarget']['parentElement'];
+		var id = $(parent).attr('id');
+
+		var e = $.Event("keydown");
+			e.keyCode = $.ui.keyCode.ENTER;
+		$('#'+id+' .subtextBox').trigger(e);
+		//Can't seem to use the same event for two triggering..
+		var e = $.Event("keydown");
+			e.keyCode = $.ui.keyCode.ENTER;
+		$('#'+id+' .priceTextBox').trigger(e);
+
+		$(this).removeClass('saveSub');
+		$(this).addClass('editsubMenu');
+		$(this).val('EDIT');
 	});
 
 	$(document).on('mousedown','.menuRow', function(evt){
@@ -67,19 +106,24 @@ $(document).ready(function(){
 		only for Enter key, while submenuRow did. Changing to keydown works for both cases now..
 	*/
 	$(document).on('keydown','.textBox', function(evt){
-		if(event.which == 13){
+		if(event.which == 13 || $(event.srcElement).attr('class')=="save"){
 			var val = $(this).val();
 			$(this).replaceWith('<p class="menuName">'+val+'</p>');
 		}
 	});
 	$(document).on('keydown','.subtextBox', function(evt){
-		if(event.which == 13){
+		// console.log('subtextbox keydown triggered');
+		// console.log(event.which, event.srcElement, evt);
+		// console.log($(event.srcElement).attr('class'));
+		if(event.which == 13 || $(event.srcElement).attr('class')=="saveSub"){
+			console.log('subtextBox enter pressed');
 			var val = $(this).val();
 			$(this).replaceWith('<p class="submenuName">'+val+'</p>');
 		}
 	});
 	$(document).on('keydown','.priceTextBox', function(evt){
-		if(event.which == 13){
+		if(event.which == 13 || $(event.srcElement).attr('class')=="saveSub"){
+			console.log('enter pressed');
 			var val = $(this).val();
 			$(this).replaceWith('<p class="price">'+val+'</p>');
 		}
@@ -97,20 +141,16 @@ $(document).ready(function(){
 //each row has id = "id+[count#]"
 //the <ol> within categories are named id=list+[row id];
 function AddNewMenuBar(id){
-	var name = '<p class="menuName"></p>',
+	var name = '<p class="menuName">MENU</p>',
 		addBut = '<input class="addSubmenu" type="button" name="add" value="+"/>',
 		edit = '<input class="editMenu" type="button" name="edit" value="EDIT"/>';
 	return '<li id="id'+id+'" class="ol_menuRow"><ol class="submenu" id=listid'+id+'><li class="menuRow">'+name+addBut+edit+'</li><ol class="ol_submenuRow"></ol></ol></li>';
 }
-// <div class='gradient'>
-// 	<p class="submenuName">Chicken Fried Rice</p>
-// 	<p class="price">$5.00</p>
-// </div>
-//function for adding the submenus
+
 function AddSubMenuBar(id){
 	var name = '<p class="submenuName">menu name</p>',
 		edit = '<input class="editsubMenu" type="button" name="edit" value="EDIT"/>',
-		img = '<img class="menuImage" src="/assets/question.jpeg"/>',
+		img = '<img class="menuImage" src="img/question.jpeg"/>',
 		price = '<p class="price">$</p>';
 	return '<li id="id'+id+'" class="submenuRow">'+edit+img+'<div class="gradient">'+name+price+'</div></li>';
 }
