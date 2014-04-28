@@ -1,20 +1,20 @@
-class CustomerController < ApplicationController
+class CustomersController < ApplicationController
 
-	# GET /customers
+  	# GET /customers
   	# GET /customers.json
-	def index
-		@customers = User.all
+    def index
+    	@customers = Customer.all
 
-		respond_to do |format|
-			format.html
-			format.json { render json: @customers }
-		end
-	end
+	    respond_to do |format|
+	      format.html # index.html.erb
+	      format.json { render json: @customers }
+    	end
+  	end
 
 	# GET /customers/1
   	# GET /customers/1.json
 	def show
-		@user = User.find(params[:id])
+		@customer = Customer.find(params[:id])
 
 		respond_to do |format|
 			format.html
@@ -36,7 +36,7 @@ class CustomerController < ApplicationController
 	# POST /customers
   	# POST /customers.json
   	def create
-  		@user = User.new( customer_params )
+  		@customer = Customer.new( customer_params )
 
   		respond_to do |format|
   			if @customer.save
@@ -90,6 +90,7 @@ class CustomerController < ApplicationController
 	# Be sure to update your create() and update() controller methods.
 
 		def customer_params
-		  params.require(:customer).permit(:avatar)
+		  params.require(:customer).permit(:avatar, :name, :email)
 		end
+
 end
