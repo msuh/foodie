@@ -30,3 +30,60 @@
 		<p class="userName">Ashley  4/8/14</p>
 	</li>
 </ol>
+
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reviews.each do |review| %>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= customer.email %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path %>
+
+<ol id="commentsFrame">
+	<% @reviews.each do |review| %>
+		<%= content_tag :li, class = "list", id = review.id do %>
+			<%= image_tag @review.customer.avatar.url %>
+			<%= content_tag :p, class="userComments" %>
+
+
+
+
+	<li id="0" class="list">
+		<img class="userImg" src="/assets/Icons_12.gif" />
+		<p class="userComments">Pad Thai is the best!</p>
+		<div class='div_likeContainer'>
+			<p class="likeCount">0</p>
+			<img class="likeImg" src="/assets/likeButton.jpeg"/>
+			<input class="replyButton" type="button" value="REPLY"/>
+		</div>
+		<p class="userName">Bill  4/4/14</p>
+	</li>
+	<li id="1" class="list">
+		<img class="userImg" src="/assets/Icons_12.gif" />
+		<p class="userComments">I wish Pad Se Ew was available as well</p>
+		<div class='div_likeContainer'>
+			<p class="likeCount">7</p>
+			<img class="likeImg" src="/assets/likeButton.jpeg"/>
+			<input class="replyButton" type="button" value="REPLY"/>
+		</div>
+		<p class="userName">Ashley  4/8/14</p>
+	</li>
+</ol>

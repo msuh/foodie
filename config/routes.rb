@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'customer/create'
+
+  get 'stats/index'
+
   get 'reviews/index' => 'reviews#index'
   get 'menus/index' => 'menus#index'
 

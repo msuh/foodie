@@ -1,4 +1,7 @@
 class Menu < ActiveRecord::Base
-	has_many :purchases
-	has_many :customers, through :purchases
+	has_many :orders
+	has_many :customers, through :orders
+
+	has_many :reviews
+	has_many :customers, through :reviews
 end

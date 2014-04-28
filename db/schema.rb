@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421205424) do
+ActiveRecord::Schema.define(version: 20140428004945) do
 
   create_table "customers", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "menus", force: true do |t|
@@ -27,15 +31,29 @@ ActiveRecord::Schema.define(version: 20140421205424) do
     t.datetime "updated_at"
   end
 
-  create_table "purchases", force: true do |t|
+  create_table "orders", force: true do |t|
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "paid"
+    t.datetime "desired_at"
+    t.text     "note",        limit: 255
+    t.integer  "customer_id"
+    t.integer  "menu_id"
   end
 
   create_table "reviews", force: true do |t|
-    t.text     "comment"
+    t.text     "content"
     t.integer  "like"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "customer_id"
+    t.integer  "menu_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
