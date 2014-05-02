@@ -58,12 +58,35 @@
 <%= link_to 'New Customer', new_customer_path %>
 
 <ol id="commentsFrame">
-	<% @reviews.each do |review| %>
+<!-- 	<% @reviews.each do |review| %>
 		<%= content_tag :li, class = "list", id = review.id do %>
 			<%= image_tag @review.customer.avatar.url %>
-			<%= content_tag :p, class="userComments" %>
-
-
+			<%= content_tag :p, class="userComments", comment = review.comment %>
+			<div class="div_likeContainer" >
+				<%= content_tag :p, class="likeCount", count = review.count %>
+				<%= image_tag @??? %>
+				<%= content_tag :input, class="replyButton" %>
+			</div>
+		<%= content_tag :p, class="userName", userName = review.userName %>
+	<% end %> -->
+	
+	<!-- comments -->
+	<% @comment.each do |comment| %>
+		<%= content_tag :li, class = "reply", id = comment.id do %>
+			<%= image_tag @comment.vendor.avatar.url %>
+			<%= content_tag :input, class="replyTextbox", text = comment.text %>
+			<div class="info" >
+				<div class="postDiv">
+					<%= content_tag :input, class="postButton" %>
+					<%= content_tag :input, class="delButton" %>
+				</div>
+				<%= content_tag :p, class="vendorName", name = review.name %>
+				<%= content_tag :p, class="postTime", time = review.time %>
+			</div>
+			<%= content_tag :p, class="userName", userName = review.userName %>
+		</li>
+	<% end %>
+</ol>
 
 
 	<li id="0" class="list">

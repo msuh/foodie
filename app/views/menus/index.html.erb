@@ -7,51 +7,79 @@
 		</tr>
 	</table>
 
-			<ol id="mainMenu">
-				<li id="id1" class="ol_menuRow">
-					<ol class="submenu" id="listid1">
-						<li class="menuRow">
-							<p class="menuName">NOODLES</p>
-							<input class="addSubmenu" type="button" name="add" value="+"/>
-							<input class="editMenu" type="button" name="edit" value="EDIT"/>
+		<ol id="mainMenu">
+			<li id="id1" class="ol_menuRow">
+				<ol class="submenu" id="listid1">
+					<li class="menuRow">
+						<p class="menuName">NOODLES</p>
+						<input class="addSubmenu" type="button" name="add" value="+"/>
+						<input class="editMenu" type="button" name="edit" value="EDIT"/>
+					</li>
+					<ol class="ol_submenuRow">
+						<li id="id2" class="submenuRow">
+							<input class="editsubMenu" type="button" name="edit" value="EDIT" />
+							<img class="menuImage" src="/assets/PadThai.jpeg" />
+							<div class='gradient'>
+								<p class="submenuName">Pad Thai</p>
+								<p class="price">$5.50</p>
+							</div>
 						</li>
-						<ol class="ol_submenuRow">
-							<li id="id2" class="submenuRow">
-								<input class="editsubMenu" type="button" name="edit" value="EDIT" />
-								<img class="menuImage" src="/assets/PadThai.jpeg" />
-								<div class='gradient'>
-									<p class="submenuName">Pad Thai</p>
-									<p class="price">$5.50</p>
-								</div>
-							</li>
-							<li id="id3" class="submenuRow">
-								
-								<input class="editsubMenu" type="button" name="edit" value="EDIT" />
-								<img class="menuImage" src="/assets/ramen.jpeg" />
-								<div class='gradient'>
-									<p class="submenuName">Ramen</p>
-									<p class="price">$6.50</p>
-								</div>
-							</li>
-						</ol>
-					</ol>
-				</li>
-				<li id="id4" class="ol_menuRow">
-					<ol class="submenu" id="listid4">
-						<li class="menuRow">
-							<p class="menuName">FRIED RICE</p>
-							<input class="addSubmenu" type="button" name="add" value="+"/>
-							<input class="editMenu" type="button" name="edit" value="EDIT"/>
+						<li id="id3" class="submenuRow">
+							
+							<input class="editsubMenu" type="button" name="edit" value="EDIT" />
+							<img class="menuImage" src="/assets/ramen.jpeg" />
+							<div class='gradient'>
+								<p class="submenuName">Ramen</p>
+								<p class="price">$6.50</p>
+							</div>
 						</li>
-						<ol class="ol_submenuRow">
-							<li id="id5" class="submenuRow">
-								<input class="editsubMenu" type="button" name="edit" value="EDIT" />
-								<img class="menuImage" src="/assets/friedRice.jpeg" />
-								<div class='gradient'>
-									<p class="submenuName">Chicken Fried Rice</p>
-									<p class="price">$5.00</p>
-								</div>
-							</li>
 					</ol>
+				</ol>
+			</li>
+			<li id="id4" class="ol_menuRow">
+				<ol class="submenu" id="listid4">
+					<li class="menuRow">
+						<p class="menuName">FRIED RICE</p>
+						<input class="addSubmenu" type="button" name="add" value="+"/>
+						<input class="editMenu" type="button" name="edit" value="EDIT"/>
+					</li>
+					<ol class="ol_submenuRow">
+						<li id="id5" class="submenuRow">
+							<input class="editsubMenu" type="button" name="edit" value="EDIT" />
+							<img class="menuImage" src="/assets/friedRice.jpeg" />
+							<div class='gradient'>
+								<p class="submenuName">Chicken Fried Rice</p>
+								<p class="price">$5.00</p>
+							</div>
+						</li>
+				</ol>
+			</li>
+		</ol>
+
+	<ol id="mainMenu">
+		<% @menus.each do |menu| %>
+		<%= content_tag :li, class = "ol_menuRow", id = menu.id do %>
+			<%= content_tag :ol, class = "submenu", id = menu.listid do %>
+				<li class ="menuRow">
+					<%= content_tag :p, class="menuName", name = menu.menuName %>
+					<%= content_tag :input, class="addSubmenu" %>
+					<%= content_tag :input, class="editMenu" %>
 				</li>
+				<ol class="ol_submenuRow">
+					<%= content_tag :li, class = "submenuRow", id = menu.id do %>
+						<%= content_tag :input, class="editsubMenu" %>
+						<%= image_tag, class="menuImage", @menu.avatar.url %>
+						<div class="gradient">
+							<%= content_tag :p, class="submenuName", name = menu.submenuName %>
+							<%= content_tag :p, class="price", price = menu.price %>
+						</div>
+					</li>
+				</ol>
 			</ol>
+		</li>
+		<% end %>
+	</ol>
+
+
+
+
